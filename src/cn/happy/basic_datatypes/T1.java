@@ -22,5 +22,7 @@ public class T1 {
         System.out.println("最小值Integer.MIN_VALUE="+Integer.MIN_VALUE);
         System.out.println("最大值 Integer.MAX_VALUE="+Integer.MAX_VALUE);
         System.out.println();
+
+        // 注释
     }
 }
