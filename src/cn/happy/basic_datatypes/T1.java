@@ -23,6 +23,7 @@ public class T1 {
         System.out.println("最大值 Integer.MAX_VALUE="+Integer.MAX_VALUE);
         System.out.println();
 
-        // 注释
+        // 注释部分 下面是其他类型代码
+
     }
 }
