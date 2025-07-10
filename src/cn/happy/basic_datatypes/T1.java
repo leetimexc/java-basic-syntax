@@ -23,7 +23,10 @@ public class T1 {
         System.out.println("最大值 Integer.MAX_VALUE="+Integer.MAX_VALUE);
         System.out.println();
 
-        // 注释部分 下面是其他类型代码
+        // 注释
+        System.out.println("222");
 
+        // long
+        System.out.println("基本类型：long 二进制位数"+Long.SIZE);
     }
 }
