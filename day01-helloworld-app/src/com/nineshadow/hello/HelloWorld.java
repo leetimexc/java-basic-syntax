@@ -13,11 +13,12 @@ public class HelloWorld {
     }
     // 定义一个方法，帮我生成一个验证码返回
     public static String getVerifyCode() {
-        String code = "";
+        StringBuilder code = new StringBuilder();
         for (int i = 0; i < 4; i++) {
             int number = (int) (Math.random() * 10);
-            code += number;
+            code.append(number);
         }
-        return code;
+        return code.toString();
     }
+
 }
