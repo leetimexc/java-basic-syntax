@@ -32,5 +32,6 @@ public class LiteralDemo {
         System.out.println("   ");
         System.out.println("   asfdsjfhjk");
         System.out.println("   asfdsjfhjk   ");
+
     }
 }
