@@ -21,5 +21,17 @@ public class VariableDemo1 {
         // 可以提高数据处理的灵活性和维护性
 
 
+        // 基本数据类型的分类
+        // 基本数据类型：4大类8种
+        // 整型：byte short int long
+        // 浮点型：float double
+        // 字符型：char
+        // 布尔型：boolean
+
+        // 常用 int double char boolean
+
+
+
+
     }
 }
