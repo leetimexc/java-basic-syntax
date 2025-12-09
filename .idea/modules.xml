@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/basic-syntax/basic-syntax.iml" filepath="$PROJECT_DIR$/basic-syntax/basic-syntax.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day01-helloworld-app/day01-helloworld-app.iml" filepath="$PROJECT_DIR$/day01-helloworld-app/day01-helloworld-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day02-basic-app/day02-basic-app.iml" filepath="$PROJECT_DIR$/day02-basic-app/day02-basic-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day03-flow-control/day03-flow-control.iml" filepath="$PROJECT_DIR$/day03-flow-control/day03-flow-control.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day04-array/day04-array.iml" filepath="$PROJECT_DIR$/day04-array/day04-array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day05-oop/day05-oop.iml" filepath="$PROJECT_DIR$/day05-oop/day05-oop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/java-basic-syntax.iml" filepath="$PROJECT_DIR$/.idea/java-basic-syntax.iml" />
+    </modules>
+  </component>
+</project>
