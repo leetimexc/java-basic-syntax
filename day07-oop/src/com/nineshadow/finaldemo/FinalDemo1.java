@@ -17,7 +17,8 @@ public class FinalDemo1 {
             b、局部变量
          */
             final double rate = 3.14;
-            rate = 3.16;
+//            rate = 3.16;  不能修改 会报错
+//            System.out.println(rate);
 
     }
 
