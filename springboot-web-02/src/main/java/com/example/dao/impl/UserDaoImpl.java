@@ -1,7 +1,18 @@
 package com.example.dao.impl;
 
+import cn.hutool.core.io.IoUtil;
 import com.example.dao.UserDao;
 
-public class UserDaoImpl implements UserDao {
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 
+public class UserDaoImpl implements UserDao {
+  @Override
+  public List<String> findAll() {
+    InputStream in = this.getClass().getClassLoader().getResourceAsStream("user.txt");
+    ArrayList<String> lines = IoUtil.readLines(in, StandardCharsets.UTF_8, new ArrayList<>());
+    return lines;
+  }
 }
