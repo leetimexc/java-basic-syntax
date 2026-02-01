@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="maven_project" />
+        <module name="jdbc-demo" />
         <module name="day08" />
       </profile>
       <profile name="Annotation profile for springboot-web-02" enabled="true">
@@ -14,7 +15,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/公司/九影网络/Java相关/Java学生表-增删改查/maven-repository_demo/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
           <entry name="$USER_HOME$/公司/九影网络/Java相关/Java学生表-增删改查/maven-repository_demo/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="springboot-web-02" />
