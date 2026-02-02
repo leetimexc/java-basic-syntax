@@ -39,4 +39,4 @@ create table tb_user (
 当前ID相对麻烦，需要每次添加的时候手动维护。
 
 ### 自增
-`auto_increment`
+`auto_increment` id
