@@ -39,10 +39,10 @@ create table tb_user (
 当前ID相对麻烦，需要每次添加的时候手动维护。
 
 ### 自增
-`auto_increment` id
+`auto_increment`
 ```
 create table tb_user (
-    id int primary key auto_increment comment 'ID,唯一标识', 
+    id int primary key auto_increment comment 'ID,唯一标识，在primary key后面输入auto_increment', 
     username varchar(20) not null unique comment '用户名',
     name varchar(10) not null comment '姓名',
     age int comment '年龄',
