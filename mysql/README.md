@@ -49,3 +49,8 @@ create table tb_user (
     gender char(1) default '男' comment '性别'
 ) comment '用户表';
 ```
+### 数据库字段类型
+数据类型主要分为三类：数值类型、字符串类型、日期时间类型。
+
+
+  
