@@ -52,5 +52,7 @@ create table tb_user (
 ### 数据库字段类型
 数据类型主要分为三类：数值类型、字符串类型、日期时间类型。
 
+<img width="875" height="346" alt="数值类型" src="https://github.com/user-attachments/assets/89553e06-a54f-4374-ae73-0ad9769cc319" />
+
 
   
