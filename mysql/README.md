@@ -52,13 +52,13 @@ create table tb_user (
 ### 数据库字段类型
 数据类型主要分为三类：数值类型、字符串类型、日期时间类型。
 - 数值类型
-    <img width="875" height="346" alt="数值类型" src="https://github.com/user-attachments/assets/89553e06-a54f-4374-ae73-0ad9769cc319" />
+  <img width="875" height="346" alt="数值类型" src="https://github.com/user-attachments/assets/89553e06-a54f-4374-ae73-0ad9769cc319" />
 
 - 字符串类型
-    <img width="428" height="227" alt="字符串类型" src="https://github.com/user-attachments/assets/42ff9b6e-ea58-4708-af25-e5e08c8129f8" />
+  <img width="428" height="227" alt="字符串类型" src="https://github.com/user-attachments/assets/42ff9b6e-ea58-4708-af25-e5e08c8129f8" />
 
 - 字符串类型怎么选
-    <img width="491" height="168" alt="字符串使用情况" src="https://github.com/user-attachments/assets/7f3166ba-e03c-4f68-b2e4-88508e020ae5" />
+  <img width="491" height="168" alt="字符串使用情况" src="https://github.com/user-attachments/assets/7f3166ba-e03c-4f68-b2e4-88508e020ae5" />
 
 - 日期时间类型
   <img width="872" height="342" alt="日期时间类型" src="https://github.com/user-attachments/assets/cd48f05f-e612-4e89-9248-5ece14f8f006" />
