@@ -62,4 +62,3 @@ create table tb_user (
 
 - 日期时间类型
   <img width="872" height="342" alt="日期时间类型" src="https://github.com/user-attachments/assets/cd48f05f-e612-4e89-9248-5ece14f8f006" />
-
