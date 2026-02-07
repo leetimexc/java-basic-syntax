@@ -49,7 +49,7 @@ create table tb_user (
     gender char(1) default '男' comment '性别'
 ) comment '用户表';
 ```
-### 数据库字段类型
+### 表操作-字段类型
 数据类型主要分为三类：数值类型、字符串类型、日期时间类型。
 - 数值类型
 <img width="875" height="346" alt="数值类型" src="https://github.com/user-attachments/assets/89553e06-a54f-4374-ae73-0ad9769cc319" />
@@ -71,4 +71,9 @@ create table tb_user (
    - char是定长字符串，varchar是变长字符串
    - 如果一个字段的长度是固定的，建议使用char；如：身份证号、手机号
    - 如果一个字符的长度不是固定的，建议使用varchar；如：用户名、姓名
-  
+
+### 表操作-设计表案例
+
+### 表操作-查询-修改-删除
+
+
