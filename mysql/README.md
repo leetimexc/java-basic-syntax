@@ -62,3 +62,13 @@ create table tb_user (
 
 - 日期时间类型
 <img width="872" height="342" alt="日期时间类型" src="https://github.com/user-attachments/assets/cd48f05f-e612-4e89-9248-5ece14f8f006" />
+
+**小结**
+1. 数值类型在定义的时候，后面加了unsigned关键字是什么意思？
+   - unsigned表示无符号类型，表示只能取0及正数
+   - 不加默认是signed，表示可以取负数
+2. char与varchar的区别是什么？什么时候用char，什么时候用varchar?
+   - char是定长字符串，varchar是变长字符串
+   - 如果一个字段的长度是固定的，建议使用char；如：身份证号、手机号
+   - 如果一个字符的长度不是固定的，建议使用varchar；如：用户名、姓名
+  
