@@ -102,6 +102,11 @@ create table emp(
     update_time datetime comment '修改时间'
 ) comment '员工表';
 ```
+**步骤**
+1. 阅读并分析页面原型及需求
+2. 分析表中包含哪些字段，以及字段的类型、约束
+3. 创建表结构 *（添加基础字段id、create_time、update_time）*
+
 ### 表操作-查询-修改-删除
 
 
