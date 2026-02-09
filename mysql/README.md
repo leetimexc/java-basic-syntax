@@ -84,6 +84,24 @@ create table tb_user (
 | 头像 | 选填 | 图片上传    | -    | 图片大小不能超过2M    | 否    |
 | 入职日期 | 选填 | 日期选择组件    | -    | 输入格式 年-月-日    | 否    |
 
+```
+-- 案例：设计员工表 emp
+-- 基础字段：id 主键；create_time 创建时间；update_time 修改时间；
+create table emp(
+    id int unsigned primary key auto_increment comment 'ID,主键',
+    username varchar(20) not null unique comment '用户名',
+    password varchar(32) default '123456' comment '密码',
+    name varchar(10) not null comment '姓名',
+    gender tinyint unsigned not null comment '性别,1 男; 2 女',
+    phone char(11) not null unique comment '手机号',
+    job tinyint unsigned comment '职位, 1 班主任; 2 讲师; 3 学工主管; 5 咨询师',
+    salary int unsigned comment '薪资',
+    entry_date date comment '入职日期',
+    image varchar(255) comment '图像',
+    create_time datetime comment '创建时间',
+    update_time datetime comment '修改时间'
+) comment '员工表';
+```
 ### 表操作-查询-修改-删除
 
 
