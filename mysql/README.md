@@ -132,7 +132,7 @@ drop table [if exists] 表名； -- 删除表
   insert into 表名 values (值1,值2, ...);
   
   -- 批量添加数据（指定字段）
-  insert into 表名(字段名1，字段名2) values (值1,值2),(值1,值2);
+  insert into 表名 (字段名1，字段名2) values (值1,值2),(值1,值2);
 
   -- 批量添加数据（全部字段）
   insert into 表名 values (值1,值2,...),(值1,值2,...);
