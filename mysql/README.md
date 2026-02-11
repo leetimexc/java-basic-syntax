@@ -108,5 +108,16 @@ create table emp(
 3. 创建表结构 *（添加基础字段id、create_time、update_time）*
 
 ### 表操作-查询-修改-删除
+```
+show tables; -- 查询当前数据库的所有表
+desc 表名;   -- 查询表结构
+show create table 表名;  -- 查询建表语句
 
+alter table 表名 add 字段名。类型(长度) [comment 注释] [约束];  -- 添加字段
+alter table 表名 modify 字段名 新数据类型(长度);  -- 修改字端类型
+alter table 表名 change 旧字段名 新字段名 类型(长度) [comment 注释] [约束]; -- 修改字段名与字段类型
+alter table 表名 drop column 字段名; -- 删除字段
+alter table 表名 rename to 新表名; -- 修改表名
 
+drop table [if exists] 表名； -- 删除表
+```
