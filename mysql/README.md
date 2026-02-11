@@ -107,9 +107,9 @@ create table emp(
 2. 分析表中包含哪些字段，以及字段的类型、约束
 3. 创建表结构 *（添加基础字段id、create_time、update_time）*
 
-### 表操作-查询-修改-删除
+### DDL表操作-查询-修改-删除
 ```
-show tables; # 查询当前数据库的所有表
+show tables; -- 查询当前数据库的所有表
 desc 表名;   -- 查询表结构
 show create table 表名;  -- 查询建表语句
 
@@ -121,3 +121,21 @@ alter table 表名 rename to 新表名; -- 修改表名
 
 drop table [if exists] 表名； -- 删除表
 ```
+### DML 对数据库中表的数据记录进行增、删、改操作
+
+- 添加数据（INSERT）
+  ```
+  -- 指定字段添加数据
+  insert into 表名(字段名1，字段名2) values (值1，值2);
+
+  -- 全部字段添加数据
+  insert into 表名 values (值1,值2, ...);
+  
+  -- 批量添加数据（指定字段）
+  insert into 表名(字段名1，字段名2) values (值1,值2),(值1,值2);
+
+  -- 批量添加数据（全部字段）
+  insert into 表名 values (值1,值2,...),(值1,值2,...);
+  ```
+- 修改数据（UPDATE）
+- 删除数据（DELETE）
