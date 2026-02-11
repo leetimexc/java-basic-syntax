@@ -109,7 +109,7 @@ create table emp(
 
 ### 表操作-查询-修改-删除
 ```
-show tables; -- 查询当前数据库的所有表
+show tables; # 查询当前数据库的所有表
 desc 表名;   -- 查询表结构
 show create table 表名;  -- 查询建表语句
 
