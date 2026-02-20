@@ -214,4 +214,4 @@ drop table [if exists] 表名； -- 删除表
   
 - 排序查询&分页查询
 
-## JDBC
+## JDBC描述
