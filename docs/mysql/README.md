@@ -208,14 +208,43 @@ drop table [if exists] 表名； -- 删除表
 
 - 分组查询
   
-  | 分组查询              | 功能                   |
-  |--------------------|----------------------|
-  | 分组                 | 描述介绍                   |
+  - 聚合函数
+      
+      | 函数    | 功能   |
+      |-------|------|
+      | count | 统计数量 |
+      | max   | 最大值  |
+      | min   | 最小值  |
+      | avg   | 平均值  |
+      | sum   | 求和   |
   
+      ```
+        ==== DQL: 分组查询 ====
+        -- 聚合函数
+        -- 注意：所有的聚合函数不参与null的统计
+        -- 1. 统计该企业员工数量
+           -- count(字段)
+             select count(id) from emp;
+           -- count(*) ：优先推荐
+             select count(*) from emp;
+           -- count(常量)：推荐
+             select count(1) from emp; // 任意值都会打印总数 除了 null
+        
+        -- 2. 统计该企业员工平均薪资
+            select avg(salary) from emp;
+    
+        -- 3. 统计该企业员工最高薪资
+            select max(salary) from emp;
+    
+        -- 4. 统计该企业员工最低薪资
+            select min(salary) from emp;
+    
+        -- 5. 统计该企业每月要给员工发放到薪资总额（薪资之和）
+            select sum(salary) from emp;
+      ```
 - 排序查询&分页查询
   
   | 排序查询&分页查询查询              | 功能                   |
   |--------------------|----------------------|
   | 分组                 | 描述介绍                   |
-  
-## JDBC描述
+
