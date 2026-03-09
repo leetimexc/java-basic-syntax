@@ -182,7 +182,7 @@ drop table [if exists] 表名； -- 删除表
   -- 去除重复记录
   select distinct 字段列表 from 表名;
   ```
- 条件查询
+- 条件查询
   ```
   -- 条件查询
   select 字段列表 from 表名 where 条件列表;
@@ -271,7 +271,7 @@ drop table [if exists] 表名； -- 删除表
     - 1.DQL语句中where与having的区别？
       - 执行时机不同（where -> group by -> having）
       - 判断条件不同（having后可以用聚合函数，where不可以）
-  - 排序查询 && 分页查询
+- 排序查询 && 分页查询
     - 排序查询
     ```
     -- 排序查询
@@ -300,4 +300,35 @@ drop table [if exists] 表名； -- 删除表
     - ... order by age;  `年龄生序`
     - ... order by age desc, score asc; `年龄降序，年龄相同根据分数升序`
     - ... order by age, score, update_time desc; `年龄升序，分数升序，更新时间降序`
-- 
+  - 分页查询
+    ```
+     -- 分页查询 
+    select 字段列表 from 表名 [where 筛选条件] [group by 分组字段] [having 分组后过滤条件] order by 排序字段 [asc/desc] limit [offset,] row_count;
+    
+    -- limit [offset,] row_count; 分页查询语法
+    -- [offset,] 起始索引，表示从第几行开始取数据
+    -- row_count 查询记录数，表示取多少行数据
+    
+    -- 说明：
+    1. 起始索引从0开始
+    2. 分页查询是数据库的方言，不同的数据库有不同的实现，MySQL中是LIMIT
+    3. 如果起始索引为0，可以省略，直接简写为 limit 10
+    
+    -- 示例：
+    ====== DQL: 分页查询 ======
+    -- 1. 从起始索引0开始查询员工数据，每页展示5条记录
+    select * from emp limit 5;
+    
+    -- 2. 查询 第一页 员工数据，每页展示5条记录
+    select * from emp limit 0,5;
+    
+    -- 3. 查询 第二页 员工数据，每页展示5条记录
+    select * from emp limit 5,5;
+    
+    -- 4. 查询第三页员工数据，每页展示5条记录
+    select * from emp limit 10,5;
+    ```
+    - 1.DQL语句中的分页查询
+      - 语法：limit 起始索引，每页展示记录数
+      - 注意：项目开发中，前端传递过来的是页码，需要转换为起始索引
+      - 公式：(页码-1)*每页记录数
