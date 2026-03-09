@@ -242,6 +242,35 @@ drop table [if exists] 表名； -- 删除表
         -- 5. 统计该企业每月要给员工发放到薪资总额（薪资之和）
             select sum(salary) from emp;
       ```
+  - 分组查询
+    ```
+    select 字段列表 from 表名 [where 条件列表] group by 字段字段名 [having 分组后过滤条件];
+    
+    -- where与 having：
+    1. where：在分组之前过滤数据,满足条件才会参与分组
+    2. having：在分组之后对结果进行过滤
+    3. where不能对聚合函数进行过滤，having可以
+    
+    -- 例子：
+    -- 分组
+    -- 注意：分组之后，select后的字段列表不能随意书写，能写的一般是分组字段 + 聚合函数；
+    -- 1. 根据性别分组，并统计该性别员工数量
+    select gender from emp group by gender;
+    // 输出 1 和 2 
+    select gender,count(*) from emp group by gender;  // gender,count(*) 就是分组字段 + 聚合函数
+    // 输出 1 27人，2 3人
+    
+    -- 2. 先查询入职时间在 2015-01-01（包含） 以前的员工，并对结果根据职位分组，获取员工数量大于等于2的职位
+    select job,count(*) from emp where entry_date <= '2015-01-01' group by job having count(*)>=2;
+    
+    -- 注意：
+    1. 分组之后，查询的字段一般为分组字段和聚合函数，查询其他字段无意义
+    2. 执行顺序：where > 聚合函数 > having 
+    ```
+  - 小结
+    - 1.DQL语句中where与having的区别？
+      - 执行时机不同（where -> group by -> having）
+      - 判断条件不同（having后可以用聚合函数，where不可以）
 - 排序查询&分页查询
   
   | 排序查询&分页查询查询              | 功能                   |
