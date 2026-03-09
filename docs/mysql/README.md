@@ -271,9 +271,33 @@ drop table [if exists] 表名； -- 删除表
     - 1.DQL语句中where与having的区别？
       - 执行时机不同（where -> group by -> having）
       - 判断条件不同（having后可以用聚合函数，where不可以）
-- 排序查询&分页查询
+  - 排序查询 && 分页查询
+    - 排序查询
+    ```
+    -- 排序查询
+    select 字段列表 from 表名 [where 筛选条件] [group by 分组字段] [having 分组后过滤条件] order by 排序字段 [asc/desc];
   
-  | 排序查询&分页查询查询              | 功能                   |
-  |--------------------|----------------------|
-  | 分组                 | 描述介绍                   |
-
+    -- 排序方式
+    -- 默认排序：升序
+    -- 降序：desc
+    -- 升序：asc
+  
+    注意： 如果是多字段排序，当第一个字段相同时，才会根据第二个字段排序
+  
+    -- 示例：
+    ====== DQL: 排序查询 ======
+    -- 1. 根据入职时间，对员工进行生序排序
+    select * from emp order by entry_date;
+  
+    -- 2. 根据入职时间，对员工进行降序排序
+    select * from emp order by entry_date desc;
+  
+    -- 3. 根据 入职时间 对员工进行 升序排序，如果时间相同，再按照 更新时间 进行降序排序
+    select * from emp order by entry_date , update_time desc;
+    ```
+    
+  - 1.下面排序查询的语法分别代表什么意思？
+    - ... order by age;  `年龄生序`
+    - ... order by age desc, score asc; `年龄降序，年龄相同根据分数升序`
+    - ... order by age, score, update_time desc; `年龄升序，分数升序，更新时间降序`
+- 
