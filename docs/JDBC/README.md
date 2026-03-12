@@ -166,3 +166,46 @@ JDBC是使用JAVA语言操作关系型数据库的一套API。
     - resultSet.next(): 判断当前行是否有效
     - resultSet.getXxx(...): 获取数据
 --- 
+#### 预编译SQL
+其实我们在编写SQL语句的时候，有两种风格：
+- 1.静态SQL(参数硬编码)
+  ```java
+    Statement statement = connection.createStatement();
+    int i = statement.executeUpdate("update user set age = 18 where id = 1"); // 18 1 直接硬编码
+  ```
+  这种呢，就是参数值，直接拼接在SQL语句中，参数值是写死的。
+
+
+- 2.预编译SQL(参数动态传递)
+  ```java
+  PreparedStatement pstmt = connection.prepareStatement("update user set age = ? where id = ?"); // ? ? 占位
+  pstmt.setString(1, 'daqiao'); // 为?占位符赋值
+  pstmt.setString(2, '123456'); // 为?占位符赋值
+  ResultSet resultSet = pstmt.executeQuery();
+  ```
+  这种呢，并未将参数值在SQL语句中写死，而是使用 ？ 进行占位，然后再指定每一个占位符对应的值是多少，而最终在执行SQL语句的时候，程序会将SQL语句（SELECT * FROM user WHERE username = ? AND password = ?），以及参数值（"daqiao", "123456"）都发送给数据库，然后在执行的时候，会使用参数值，将？占位符替换掉。
+
+那这种预编译的SQL，也是在项目开发中推荐使用的SQL语句。主要的作用有两个：
+- 防止SQL注入，更安全
+- 执行效率更高
+
+介绍：
+- SQL注入
+  - SQL注入：通过控制输入来修改事先定义好的SQL语句，以达到执行代码对服务器进行**攻击**的方法。
+  - SQL注入最典型的场景，就是用户登录功能。
+    ```sql
+      select count(*) from emp where username = 'admin' and password = '123456';
+    ```
+    通过*控制表单输入*，来修改事先定义好的SQL语句的含义。 从而来攻击服务器。
+    ```text
+      账号任意：zhangsan
+      密码：' or '1'='1;
+      SQL注入攻击：select count(*) from emp where username = 'zhangsan' and password = '' or '1'='1';
+      登录成功
+    ```
+    原因：编写的SQL语句是基于字符串进行拼接的。or 连接的条件，是或的关系，两者满足其一就可以。所以，虽然用户名密码输入错误，也是可以查询返回结果的，而只要查询到了数据，就说明用户名和密码是正确的。
+- SQL注入解决
+  - 通过预编译SQL（`select * from user where username = ? and password = ?`），就可以直接解决上述SQL注入的问题。
+  - 注意：在以后的项目开发中，使用的基本全部都是预编译SQL语句。
+- 性能更高
+  ![img.png](img.png) 
