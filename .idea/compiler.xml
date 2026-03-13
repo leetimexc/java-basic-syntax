@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="maven_project" />
+        <module name="mybatis-demo" />
         <module name="jdbc-demo" />
         <module name="day08" />
       </profile>
@@ -19,19 +20,23 @@
         </processorPath>
         <module name="springboot-web-02" />
       </profile>
-      <profile name="Annotation profile for springboot-web-03" enabled="true">
+      <profile name="Annotation profile for springboot-mybatis-quickstart" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/公司/九影网络/Java相关/Java学生表-增删改查/maven-repository_demo/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+          <entry name="$USER_HOME$/公司/九影网络/Java相关/Java学生表-增删改查/maven-repository_demo/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
+        <module name="springboot-mybatis-quickstart" />
         <module name="springboot-web-03" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="mybatis-demo" options="-parameters" />
+      <module name="springboot-mybatis-quickstart" options="-parameters" />
       <module name="springboot-web-02" options="-parameters" />
       <module name="springboot-web-03" options="-parameters" />
     </option>
