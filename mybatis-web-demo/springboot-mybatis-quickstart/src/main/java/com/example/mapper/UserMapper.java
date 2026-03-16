@@ -1,6 +1,7 @@
 package com.example.mapper;
 
 import com.example.pojo.User;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -19,10 +20,9 @@ public interface UserMapper {
     public List<User> findAll();
 
     /**
-     * 根据id删除用户信息
+     * 根据 id 删除用户信息
      */
-    @Select("delete from user where id = #{id}")
-    public void deleteById(int id);
-
+    @Delete("delete from user where id = #{id}")
+    public Integer deleteById(int id);
 
 }

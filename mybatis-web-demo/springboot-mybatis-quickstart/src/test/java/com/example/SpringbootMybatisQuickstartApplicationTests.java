@@ -19,4 +19,14 @@ class SpringbootMybatisQuickstartApplicationTests {
         List<User> userList = userMapper.findAll();
         userList.forEach(System.out::println);
     }
+
+    /**
+     * 测试删除用户
+     */
+    @Test
+    public void testDeleteById() {
+        // userMapper.deleteById(6);
+        Integer i = userMapper.deleteById(6);
+        System.out.println("执行完毕，影响的记录数：" + i);
+    }
 }

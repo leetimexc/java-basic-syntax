@@ -187,8 +187,23 @@ web程序分为三层架构：
   - Mapper接口：
     ```java
     @Delete("delete from user where id = #{id}")
-    public void deleteById(Integer id);
+    // public void deleteById(Integer id);
+    public Integer deleteById(Integer id);
     ```
+  - 测试：
+    ```java
+    /**
+     * 测试删除用户
+     */
+    @Test
+    public void testDeleteById() {
+        Integer i = userMapper.deleteById(6);
+        System.out.println("执行完毕，影响的记录数：" + i);
+    }
+    ```
+  - Mybatis中的 # 和 $ 的区别：
+    ![img_15.png](img_15.png)
+    ***在企业项目开发中，强烈建议使用 #{...}***
 - 新增
 - 更新
 - 查询
