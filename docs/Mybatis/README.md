@@ -181,7 +181,14 @@ web程序分为三层架构：
 
 ---
 ### Mybatis的增删改查
-- 删除
+- 删除用户-delete
+  - 需求：根据ID删除用户信息
+  - SQL：delete from user where id = 5;
+  - Mapper接口：
+    ```java
+    @Delete("delete from user where id = #{id}")
+    public void deleteById(Integer id);
+    ```
 - 新增
 - 更新
 - 查询

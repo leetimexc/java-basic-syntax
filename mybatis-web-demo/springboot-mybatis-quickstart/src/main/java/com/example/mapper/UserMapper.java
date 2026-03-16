@@ -17,4 +17,12 @@ public interface UserMapper {
     // @Delete 删除
     @Select("select * from user")
     public List<User> findAll();
+
+    /**
+     * 根据id删除用户信息
+     */
+    @Select("delete from user where id = #{id}")
+    public void deleteById(int id);
+
+
 }
