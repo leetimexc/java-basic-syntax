@@ -216,9 +216,28 @@ web程序分为三层架构：
     1. Mybatis中执行DML语句时，有没有返回值？
       - 有，int类型，表示DML语句执行影响的记录数
     2. Mybatis中 # 与 $ 的区别是什么？（面试题）
-      - # 是占位符，会替换为？生成预编译SQL（推荐）
-      - $ 是字符串拼接符号，将参数值直接拼接在SQL中（存在SQL注入问题）
-- 新增
+      - `#` 是占位符，会替换为？生成预编译SQL（推荐）
+      - `$` 是字符串拼接符号，将参数值直接拼接在SQL中（存在SQL注入问题） 
+
+- 新增用户-insert
+  - 需求：添加一个用户
+  - SQL：insert into user(username,password,name,age) values('zhouyu','1234','周瑜',20);
+  - Mapper接口：
+    ```java
+    @Insert("insert into user(username,password,name,age) values(#{username},#{password},#{name},#{age})")
+    public void insert(User user);
+    ```
+  - 测试：
+    ```java
+      public void testInsert(){
+      User user = new User();
+      user.setUsername("admin");
+      user.setPassword("123456");
+      user.setName("管理员");
+      user.setAge(30);
+      userMapper.insert(user);
+    ```
+    ![img_16.png](img_16.png)
 - 更新
 - 查询
 ---

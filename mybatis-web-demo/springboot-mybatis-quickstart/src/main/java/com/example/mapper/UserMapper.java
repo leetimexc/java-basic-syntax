@@ -2,6 +2,7 @@ package com.example.mapper;
 
 import com.example.pojo.User;
 import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -25,4 +26,9 @@ public interface UserMapper {
     @Delete("delete from user where id = #{id}")
     public Integer deleteById(int id);
 
+    /**
+     * 新增用户
+     */
+    @Insert("insert into user(username, password, name, age) values(#{username}, #{password}, #{name}, #{age})")
+    public Integer insert(User user);
 }
