@@ -203,7 +203,21 @@ web程序分为三层架构：
     ```
   - Mybatis中的 # 和 $ 的区别：
     ![img_15.png](img_15.png)
+    ```java
+    // 占位符（推荐使用）
+    @Delete("delete from user where id = #{id}")
+    ```
+    ```java
+    // 动态设置表名和字段名（存在SQL注入问题）
+    @Delete("delete id,name,score from ${tableName} order by ${sortField}")
+    ```
     ***在企业项目开发中，强烈建议使用 #{...}***
+  - 小结：
+    1. Mybatis中执行DML语句时，有没有返回值？
+      - 有，int类型，表示DML语句执行影响的记录数
+    2. Mybatis中 # 与 $ 的区别是什么？（面试题）
+      - # 是占位符，会替换为？生成预编译SQL（推荐）
+      - $ 是字符串拼接符号，将参数值直接拼接在SQL中（存在SQL注入问题）
 - 新增
 - 更新
 - 查询
