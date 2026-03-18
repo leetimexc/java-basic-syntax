@@ -239,6 +239,21 @@ web程序分为三层架构：
     ```
     ![img_16.png](img_16.png)
 - 更新
+  - 需求：根据ID更新用户信息
+  - SQL：update user set username = 'zhouyu',password = '123456', name = '周瑜', age = 20 where id = 1;
+  - Mapper接口：
+    ```java
+    @Update("update user set username = #{username}, password = #{password}, name = #{name}, age = #{age} where id = #{id}")
+    public void update(User user);
+    ```
+  - 测试：
+    ```java
+    @Test
+    public void testUpdate() {
+        User user = new User(7, "zhenji", "1234", "甄姬", 19);
+        userMapper.update(user);
+    }
+    ```
 - 查询
 ---
 ### Mybatis的XML映射配置

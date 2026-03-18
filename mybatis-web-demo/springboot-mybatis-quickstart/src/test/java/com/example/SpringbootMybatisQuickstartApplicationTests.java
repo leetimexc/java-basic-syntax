@@ -26,7 +26,7 @@ class SpringbootMybatisQuickstartApplicationTests {
     @Test
     public void testDeleteById() {
         // userMapper.deleteById(6);
-        Integer i = userMapper.deleteById(6);
+        Integer i = userMapper.deleteById(8);
         System.out.println("执行完毕，影响的记录数：" + i);
     }
 
@@ -39,4 +39,14 @@ class SpringbootMybatisQuickstartApplicationTests {
         Integer i = userMapper.insert(user);
         System.out.println("执行完毕，影响的记录数：" + i);
     }
+
+    /**
+     * 测试修改用户
+     */
+    @Test
+    public void testUpdate() {
+        User user = new User(7, "zhenji", "1234", "甄姬", 16);
+        userMapper.update(user);
+    }
+
 }

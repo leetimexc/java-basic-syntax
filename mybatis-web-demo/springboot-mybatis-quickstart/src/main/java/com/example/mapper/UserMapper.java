@@ -1,10 +1,7 @@
 package com.example.mapper;
 
 import com.example.pojo.User;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -31,4 +28,10 @@ public interface UserMapper {
      */
     @Insert("insert into user(username, password, name, age) values(#{username}, #{password}, #{name}, #{age})")
     public Integer insert(User user);
+
+    /**
+     * 修改用户信息
+     */
+    @Update("update user set username = #{username}, password = #{password}, name = #{name}, age = #{age} where id = #{id}")
+    public void update(User user);
 }
