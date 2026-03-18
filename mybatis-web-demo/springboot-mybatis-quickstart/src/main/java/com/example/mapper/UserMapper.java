@@ -34,4 +34,12 @@ public interface UserMapper {
      */
     @Update("update user set username = #{username}, password = #{password}, name = #{name}, age = #{age} where id = #{id}")
     public void update(User user);
+
+    /**
+     * 根据 username 和 password 查询用户信息
+     */
+    @Select("select * from user where username = #{username} and password = #{password}")
+    // public User findByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
+    public User findByUsernameAndPassword(String username, String password); // 基于官方骨架创建的springboot项目, @Param注解可以省略
+
 }

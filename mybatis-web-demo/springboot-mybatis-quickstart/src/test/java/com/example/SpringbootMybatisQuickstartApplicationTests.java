@@ -49,4 +49,13 @@ class SpringbootMybatisQuickstartApplicationTests {
         userMapper.update(user);
     }
 
+    /**
+     * 测试查询用户
+     */
+    @Test
+    public void testFindByUsernameAndPassword() {
+        User user = userMapper.findByUsernameAndPassword("zhenji", "1234");
+        System.out.println(user);
+    }
+
 }

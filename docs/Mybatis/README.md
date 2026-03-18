@@ -254,7 +254,34 @@ web程序分为三层架构：
         userMapper.update(user);
     }
     ```
+    ![img_17.png](img_17.png)
 - 查询
+  - 需求：根据用户名和密码查询用户信息
+  - SQL：select * from user where username = 'zhenji' and password = '1234';
+  - Mapper接口：
+    ```java
+    /**
+    * 根据用户名和密码查询用户信息
+    */
+    @Select("select * from user where username = #{username} and password = #{password}")
+    public User findByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
+    ```
+    `@param` 注解的作用是为接口的方法形参起名字的。（由于用户名唯一的，所以查询返回的结果最多只有一个，可以直接封装到一个对象中）
+  - 测试：
+    ```java
+    @Test
+    public void testFindByUsernameAndPassword(){
+      User user = userMapper.findByUsernameAndPassword("admin666", "123456");
+      System.out.println(user);
+    }
+    ```
+    ![img_18.png](img_18.png)
+  - 说明：基于`官方骨架创建的springboot项目`中，接口编译时会保留方法形参名，`@Param注解可以省略` (`#{形参名}`)。
+    ![img_19.png](img_19.png)
+  - 小结：
+    1. @Param注解的使用场景？
+       - 如果接口方法形参中，需要传递多个参数，需要通过@Param注解为参数起名字；
+       - 在基于SpringBoot官方骨架创建的SpringBoot项目中，该注解可以省略；
 ---
 ### Mybatis的XML映射配置
 介绍XML映射配置
