@@ -284,6 +284,16 @@ web程序分为三层架构：
        - 在基于SpringBoot官方骨架创建的SpringBoot项目中，该注解可以省略；
 ---
 ### Mybatis的XML映射配置
-介绍XML映射配置
 
+#### XML映射配置
+- 在Mybatis中，既可以通过注解配置SQL语句，也可以通过XML配置文件配置SQL语句。
+- 默认规则：
+  1. XML映射文件的名称与Mapper接口名称一致，并且将XML映射文件和Mapper接口放置在相同包下（同包同名）
+  2. XML映射文件的namespace属性为Mapper接口名一致
+  3. XML映射文件中sql语句的id与Mapper接口中的方法名一致，并保持返回类型一致
+  ![img_20.png](img_20.png)
+     ```
+     <select>标签：就是用于编写select查询语句的。
+     resultType属性，指的是查询返回的单条记录所封装的类型。
+     ```
 ---
