@@ -14,7 +14,8 @@ public interface UserMapper {
     // @Insert 新增
     // @Update 修改
     // @Delete 删除
-    @Select("select * from user")
+    // @Select("select * from user")
+    // @Select("select id, username, password, name, age from user")
     public List<User> findAll();
 
     /**
